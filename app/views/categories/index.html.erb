@@ -1,0 +1,30 @@
+<h1>Categories</h1>
+<div class="d-flex justify-content-end">
+  <a href="<%= new_category_path %>" class="btn btn-success">Nouveau</a>
+</div>
+<table class="table table-striped table-bordered mt-5">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th class="w-25"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @categories.each do |categorie| %>
+    <tr>
+      <td><%= categorie.id %></td>
+      <td><%= categorie.title %></td>
+      <td>
+        <div class="d-flex gap-2">
+          <a href="<%= edit_category_path(categorie.id) %>" class="btn btn-primary">Editer</a>
+          <%= form_for categorie, url: category_path(categorie.id), method: :delete do |f| %>
+            <%= f.submit 'Supprimer', class: 'btn btn-danger', onclick: "return window.confirm('confirmer ?')" %>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

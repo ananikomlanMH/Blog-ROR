@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rails Projet</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= favicon_link_tag asset_path('rails/favicon.ico') %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="<%= root_path %>" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <%= image_tag "rails/logo.png", :style => "width: 105px" %>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="<%= posts_path %>" class="nav-link px-2 link-secondary">Posts</a></li>
+        <li><a href="<%= categories_path %>" class="nav-link px-2 link-body-emphasis">Categories</a></li>
+        <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li>
+        <li><a href="#" class="nav-link px-2 link-body-emphasis">Customers</a></li>
+        <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="container pt-2">
+  <%= yield %>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<h1><%= @post.title %></h1>
+
+<blockquote class="blockquote mb-0">
+  <p><%= @post.content %></p>
+  <footer class="blockquote-footer"><%= @post.author %></footer>
+</blockquote>
+
+<br>
+<br>
+<a class="btn btn-primary" href="<%= edit_post_path(@post.id) %>">Editer l'article</a>
